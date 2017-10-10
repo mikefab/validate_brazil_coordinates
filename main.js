@@ -30,10 +30,10 @@ csv()
 
   var jstsPoint = geojsonReader.read(point);
   if (jstsPoint.within(jstsPolygon)) {
-    console.log('good', point)
+    console.log(i, 'good', point)
     fs.appendFileSync('good_schools.csv', Object.values(jsonObj).join(',') + '\n')
   } else {
-    console.log('bad', point)
+    console.log(i, 'bad', point)
     fs.appendFileSync('bad_schools.csv', Object.values(jsonObj).join(',') + '\n')
   }
 
